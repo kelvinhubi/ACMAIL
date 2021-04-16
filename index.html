@@ -53,11 +53,7 @@ Login Form
 </div>
 <div class="container">
 <label for="name"><b>Username</b></label>
-<input type="text" placeholder="Enter Username" name="user" required>
-<label for="pass"><b>Password</b></label>
-<input type="password" placeholder="Please Enter Password" name="pass" required>
-<button onclick="Login(this.form)">Login</button>
-<button onclick="document.getElementById('teachers').style.display='none'" class="cancel" style="background-color:#4a0707;">Cancel</button>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 </form>
 </div>
 </div>
