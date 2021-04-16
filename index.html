@@ -5,6 +5,15 @@ Login Form
 </title>
 <head>
 	<meta name="google-signin-client_id" content="870925403574-umg81u1nt19kc5drfjutu0p9sm6s8b3n.apps.googleusercontent.com">
+	<script>
+	
+  function signout() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -19,7 +28,7 @@ Login Form
 		}
 	</style>
 </head>
-<body>
+<body onload="signout();">
 	<img class="logo" src="165939256_1405063883187205_3616298578596548590_n.png">
 <div class="logins">
 <h2>Login As?</h2>
@@ -70,7 +79,6 @@ Login Form
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
-	  window.onload = signOut;
   }
 </script>
 <script>
