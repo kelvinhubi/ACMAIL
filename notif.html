@@ -34,6 +34,23 @@
 			height: 400px;
 			border-radius:10px 40px 10px;
 		}
+		.another
+		{
+			color: #297317;
+			background-color:white;
+			text-decoration: none;
+			font-family:"Lucida Handwriting";
+			transition:0.25s;
+			padding: 16px 1;
+			margin-left: auto;
+			margin-right:auto;
+			
+		}
+		.another:hover{
+			
+			padding:16px 20px;
+			background-color:blue;
+		}
 		
 	</style>
 </head>
@@ -55,5 +72,14 @@
 	<div class="border2">
 		<iframe src="https://calendar.google.com/calendar/embed?src=is7puk7c8l9umq9e8ggbe818jo%40group.calendar.google.com&ctz=Asia%2FManila" style="border: 0"  frameborder="0" scrolling="no"></iframe>
 	</div>
+	<a class="another" href="index.html" onclick="signOut();">Sign out</a>
+	<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 </body>
 </html>
