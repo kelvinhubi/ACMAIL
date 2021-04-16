@@ -4,8 +4,22 @@
 Login Form
 </title>
 <head>
+	<meta name="google-signin-client_id" content="870925403574-umg81u1nt19kc5drfjutu0p9sm6s8b3n.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.g-signin2{
+			
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			background-color: blue;
+		}
+	</style>
 </head>
 <body>
 <img class="logo" src="165939256_1405063883187205_3616298578596548590_n.png">
@@ -47,6 +61,16 @@ Login Form
 </form>
 </div>
 </div>
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 <script>
 function Login(form){ 
 if(form.user.value == "admin" && form.pass.value == "pass")
@@ -67,6 +91,14 @@ else{
 alert("error")
 }
 }
+	function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 </script>
 </body>
 </html>
+
