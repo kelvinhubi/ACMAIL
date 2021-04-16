@@ -15,8 +15,7 @@ Login Form
 			
 			margin-left: auto;
 			margin-right: auto;
-			width: 100%;
-			background-color: blue;
+			
 		}
 	</style>
 </head>
@@ -39,6 +38,7 @@ Login Form
 <label for="pass"><b>Password</b></label>
 <input type="password" placeholder="Please Enter Password" name="password" required>
 <button onclick="Open(this.open)">Login</button>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <button onclick="document.getElementById('students').style.display='none'" class="cancel" style="background-color:#4a0707;">Cancel</button>
 </form>
 </div>
@@ -52,11 +52,15 @@ Login Form
 </div>
 <div class="container">
 <label for="name"><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="user" required>
+<label for="pass"><b>Password</b></label>
+<input type="password" placeholder="Please Enter Password" name="pass" required>
+<button onclick="Login(this.form)">Login</button>
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
+<button onclick="document.getElementById('teachers').style.display='none'" class="cancel" style="background-color:#4a0707;">Cancel</button>
 </form>
 </div>
 </div>
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	<a href="#" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
@@ -86,6 +90,15 @@ else{
 alert("error")
 }
 }
+	function Open(open){
+if(onSignIn)
+{
+window.open('notif.html')
+}
+else{
+alert("error")
+}
+}
 	function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -96,4 +109,3 @@ alert("error")
 </script>
 </body>
 </html>
-
