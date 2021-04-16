@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>
+Login Form
+</title>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img class="logo" src="165939256_1405063883187205_3616298578596548590_n.png">
+<div class="logins">
+<h2>Login As?</h2>
+<button class="teacher" onclick="document.getElementById('teachers').style.display='block'"style="width:auto;">Teacher</button>
+<button class="student" onclick="document.getElementById('students').style.display='block'"style="width:auto;">Student</button>
+</div>
+<div id="students" class="login">
+<form class="content"  name="student">
+<div class="avatar">
+<span onclick="document.getElementById('students').style.display='none'"class="close">&times;</span>
+<img src="logo.png">
+</div>
+<div class="container">
+<label for="name"><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="name" required>
+<label for="pass"><b>Password</b></label>
+<input type="password" placeholder="Please Enter Password" name="password" required>
+<button onclick="Open(this.open)">Login</button>
+<button onclick="document.getElementById('students').style.display='none'" class="cancel" style="background-color:#4a0707;">Cancel</button>
+</form>
+</div>
+</div>
+
+<div id="teachers" class="login">
+<form class="content" name="form">
+<div class="avatar">
+<span onclick="document.getElementById('teachers').style.display='none'"class="close">&times;</span>
+<img src="logo.png">
+</div>
+<div class="container">
+<label for="name"><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="user" required>
+<label for="pass"><b>Password</b></label>
+<input type="password" placeholder="Please Enter Password" name="pass" required>
+<button onclick="Login(this.form)">Login</button>
+<button onclick="document.getElementById('teachers').style.display='none'" class="cancel" style="background-color:#4a0707;">Cancel</button>
+</form>
+</div>
+</div>
+<script>
+function Login(form){ 
+if(form.user.value == "admin" && form.pass.value == "pass")
+  {
+    window.open('notif admin.html')
+
+  }
+else{
+alert("Error")
+}
+}
+function Open(open){
+if(student.name.value == "student" && student.password.value == "password")
+{
+window.open('notif.html')
+}
+else{
+alert("error")
+}
+}
+</script>
+</body>
+</html>
+
