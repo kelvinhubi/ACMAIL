@@ -19,8 +19,8 @@ Login Form
 		}
 	</style>
 </head>
-<body onload="signOut();">
-<img class="logo" src="165939256_1405063883187205_3616298578596548590_n.png">
+<body>
+	<img class="logo" src="165939256_1405063883187205_3616298578596548590_n.png">
 <div class="logins">
 <h2>Login As?</h2>
 <button class="teacher" onclick="document.getElementById('teachers').style.display='block'"style="width:auto;">Teacher</button>
@@ -64,11 +64,13 @@ Login Form
 	<a href="#" onclick="signOut();">Sign out</a>
 	
 <script>
+	
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
+	  window.onload = signOut;
   }
 </script>
 <script>
